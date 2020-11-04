@@ -1,0 +1,31 @@
+---
+title: "Developing Data Products"
+author: "Tanisha Srivastava"
+date: "04/11/2020"
+output:
+  ioslides_presentation: default
+  slidy_presentation: default
+---
+
+In all the three plots below we will use predefined datasets available. 3D-SCATTER PLOT Developing a 3D scatter plot using type=“scatter3d”
+
+```{r}
+library(plotly)
+temperature_is <-rnorm(90, mean=20, sd=5)
+pressure_is <-rnorm(90)
+dtime <- 1:90
+plot_ly(x=temperature_is, y=pressure_is, z=dtime, type="scatter3d", mode="markers", color=temperature_is)
+```
+
+3D SURFACE Haere I am going to try and create a 3D surface plot by using the type=“surface”
+
+```{r}
+library(plotly)
+terrain <- matrix(sort(rnorm(100*100)), nrow = 100, ncol = 100)
+plot_ly(z=terrain, type="surface")
+```
+SCATTER GRAPH here we are creating a normal scatter plot
+```{r}
+library(plotly)
+plot_ly(x=time(airmiles), y=airmiles, type="scatter")
+```
